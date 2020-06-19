@@ -1,0 +1,299 @@
+html { font-size:100%; }
+body {
+    font-family: 'Noto Sans';font-size: 1.3rem;
+    /*    background-color: #FFE169;*/
+      background: #fceabb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fceabb, #f8b500); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fceabb, #f8b500);
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+/*
+Kerning -https://www.canva.com/learn/kerning/
+what's the effect?
+*/
+
+div {
+  font-kerning: normal;
+}
+ul {
+    list-style-type: none;
+}
+.float-clear {
+    clear:  both;
+}
+.evt-record {
+    /*    background-color: #FFCF14;*/
+    background-color:  #fffdd0;  /* #effd5f;*/
+    border-radius: .5rem;   /* we think we're ok with this as rem... kind of
+			    looks better as em... */
+    padding: .8em; /* ok cause we aren't nesting this repeatedly */
+    /* yo, better as .8em than .6 or whatever */
+    margin-top: 1rem;
+}
+.nueva-boton {
+    float: left;
+    margin-left: 2.6em;  /* YO u neglected to change this to em when the 
+			    others were changed to rem and it *broke*
+			    gotta be consistent -- this is em too */
+}
+.post-boton {
+    float: left;
+}
+ul {
+    margin-left: 2.6em; /* trying... */
+    margin-right: 2.6em;
+    padding: 0;
+    overflow: scroll;
+    height: 19em; /* diff w/ max-height? */
+}
+/*
+.base-class {
+    opacity: 0.2;
+    -webkit-transition: all 4s linear;
+    -moz-transition: all 4s linear;
+    -o-transition: all 4s linear;
+    transition: all 4s linear;
+    
+    transition-property: opacity;
+	transition-duration: 4s;
+	transition-delay: .2s;
+	transition-timing-function: linear;    
+}
+.baser-class {
+    opacity: 0.9;
+}*/
+
+/*
+THIS is how we toggle with animation -- no "no-render," it's always there but often hidden via opacity... then it can always animate in and out by toggling class!
+*/
+.editing {
+    margin-left: 2.6em;
+    margin-right: 2.6em;
+    /*    background-color: #666600; */
+    background-color: #28334a;
+    border-radius: .5rem;
+    padding: .5em;
+    margin-top: 1em;
+    min-height: 2.938em;
+    opacity: 1;
+    transition: opacity 950ms ease-in-out,
+                transform 950ms ease;
+    -webkit-appearance: none; /* is this ok ? */
+    -moz-appearance: none;  /* is this ok ? */ 
+
+    
+}
+.nah {
+    padding: .5em;
+    margin-left: 2.6em;
+    margin-right: 2.6em;
+    margin-top: 1em;
+    min-height: 2.938em;
+    /*        display: none; */
+	opacity: 0;
+    transition: opacity 900ms ease-in-out,
+		transform 950ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+@media (min-width: 640px) { body {font-size:1rem;} } 
+@media (min-width:960px) { body {font-size:1.2rem;} } 
+@media (min-width:1100px) { body {font-size:1.5rem;} }
+/*
+the rem unit is not recognized by older browers, so don’t forget to implement a fallback.
+*/
+.nuevo-btn {
+    margin-right: .375rem;
+}
+.botones-edit {
+ margin: .625em .375em;
+}
+button {
+
+    border-radius: .5rem;
+/*    margin-right: 1em;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+*/
+    display: inline-block;
+    border: none;
+    padding: 1em 2em;
+
+    margin: 0;
+    text-decoration: none;
+    /*    background: #808000;*/
+    background: #7a8eb8;
+    color: #FFFFE0;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em; /* if font-size is variable, letter spacing should def be em */
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #BDB76B;
+}
+
+button:focus {
+    outline: .2em solid #fff;
+    outline-offset: -.3em; 
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+.float-left {
+    float: left;
+}
+.divider {
+    width:.375rem;
+    height:auto;
+    display:inline-block;
+}
+
+input[type=text] {
+    width: 80%;
+/*    background-color: #FFE169;*/
+    padding: .9em .4em;
+    margin: .625em .375em;
+    box-sizing: border-box;
+    font-size: .7rem;
+    opacity: 0.9;
+
+    max-width: 18em;
+    font-weight: 500;
+
+
+}
+
+
+/* border-width is when to use px */
+/* em for border radius? why? https://medium.com/@kilgarenone/in-short-when-to-use-px-em-and-rem-b2de94e1b829 */
+
+/* child em's *can* multiply
+https://alligator.io/css/rem-vs-em-units/
+.parent {
+  font-size: 15px;
+}
+.child {
+  font-size: 2em;
+}
+<div class="parent">
+  I'm 15px
+  <div class="child">
+  I'm 30px, as expected
+    <div class="child">
+    I'm 60px, trouble starts!
+      <div class="child">
+      I'm 120px, now we're really in trouble!
+      </div>
+    </div>
+  </div>
+</div>
+
+em is only for when u want influence of the parent element
+https://j.eremy.net/confused-about-rem-and-em/
+this guy used to do em a lot but now also does rem mostly
+
+
+this guy indicates some em pitfalls
+https://zellwk.com/blog/rem-vs-em/
+"I have two simple rules:
+
+Size in em if the property scales according to its font-size
+Size everything else in rem."
+the implementation pitfall is in implementing headers/etc that inherit from multiple classes, when u may have to redeclare padding
+
+this breaks (too little padding):
+.header {
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: #7F7CFF;
+}
+
+.header--large {
+  font-size: 2rem;
+}
+
+this is fix (redeclare padding):
+.header {
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: #7F7CFF;
+}
+
+.header--large {
+  font-size: 2rem;
+  padding: 1rem 1.5rem;
+}
+
+in effect:
+Notice the pattern here? .header--large's font-size is twice as large as .header's. Consequently, padding on .header--large is twice as large as padding on .header.
+
+What would happen if we have more headers of different sizes, or if the headers have to change in size? You can already see how coding the entire site in rem can cause duplication and super complex code.
+
+We can simplify the code such that there’s no need to redeclare padding on .header--large if we don’t mind using both em and rem:
+
+.header {
+  font-size: 1rem;
+  padding: 0.5em 0.75em;
+  background: #7F7CFF;
+}
+
+.header--large {
+  font-size: 2rem;
+}
+
+so if we add classes that change the (rem) font size, the root class defined padding according to the (flexible) em size
+this could help btw w/ media queries. u may want it relative
+
+
+ok -- implemented that (rem font sizes, em's for padding/etc, local properties that derive from local font size for responsiveness -- see media queries too for how this can make for more flexible responsiveness), feeling good about what that does for responsiveness
+
+but i ain't changing the font size (or strategy -- weight/letter-spacing) enough in the app
+
+and I don't have the complete family strategy, for extra web safety (and maybe an extra font, such as for zero-case, "msg" div)
+
+btw how is that msg div kept responsive, as w/ Zendesk?
+ */

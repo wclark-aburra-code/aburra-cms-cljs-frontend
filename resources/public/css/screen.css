@@ -1,0 +1,494 @@
+html { font-size:100%; scroll-behavior: smooth; }
+body {
+    font-family: 'Noto Sans';font-size: 1.3rem;
+    /*    background-color: #FFE169;*/
+      background: #fceabb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fceabb, #f8b500); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fceabb, #f8b500);
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+/*
+Kerning -https://www.canva.com/learn/kerning/
+what's the effect?
+*/
+
+div {
+  font-kerning: normal;
+}
+ul {
+    list-style-type: none;
+}
+.float-clear {
+    clear:  both;
+}
+.evt-record {
+    /*    background-color: #FFCF14;*/
+    background-color:  #fffdd0;  /* #effd5f;*/
+    border-radius: .5rem;   /* we think we're ok with this as rem... kind of
+			    looks better as em... */
+    padding: .8em; /* ok cause we aren't nesting this repeatedly */
+    /* yo, better as .8em than .6 or whatever */
+    margin-top: 1rem;
+}
+.nueva-boton {
+    float: left;
+    margin-left: 2.6em;  /* YO u neglected to change this to em when the 
+			    others were changed to rem and it *broke*
+			    gotta be consistent -- this is em too */
+}
+.post-boton {
+    float: left;
+}
+ul {
+    margin-left: 2.6em; /* trying... */
+    margin-right: 2.6em;
+    padding: 0;
+    overflow: scroll;
+    height: 19em; /* diff w/ max-height? */
+}
+/*
+.base-class {
+    opacity: 0.2;
+    -webkit-transition: all 4s linear;
+    -moz-transition: all 4s linear;
+    -o-transition: all 4s linear;
+    transition: all 4s linear;
+    
+    transition-property: opacity;
+	transition-duration: 4s;
+	transition-delay: .2s;
+	transition-timing-function: linear;    
+}
+.baser-class {
+    opacity: 0.9;
+}*/
+
+/*
+THIS is how we toggle with animation -- no "no-render," it's always there but often hidden via opacity... then it can always animate in and out by toggling class!
+*/
+
+.lbl {
+    color: #F8E473;
+    margin-left: 1.2em;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    font-size: .9em;
+}
+.editing {
+    margin-left: 2.6em;
+    margin-right: 2.6em;
+    /*    background-color: #666600; */
+    background-color: #28334a;
+    border-radius: .5rem;
+    padding: .5em;
+    margin-top: 1em;
+    min-height: 2.938em;
+    opacity: 1;
+    transition: opacity 950ms ease-in-out,
+                transform 950ms ease;
+    -webkit-appearance: none; /* is this ok ? */
+    -moz-appearance: none;  /* is this ok ? */ 
+
+    
+}
+.nah {
+    padding: .5em;
+    margin-left: 2.6em;
+    margin-right: 2.6em;
+    margin-top: 1em;
+    min-height: 2.938em;
+    /*        display: none; */
+	opacity: 0;
+    transition: opacity 900ms ease-in-out,
+		transform 950ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+#iphone {display: none;}
+@media (max-width: 287px) { #app {display: none;} #iphone {display: inline-block;}}
+
+@media (max-width: 340px) { .list-ctrl {margin-bottom: .6em} }
+@media (max-width: 370px) { .los-botones {display: inline-flex;} .los-botones button {height:4.3rem;} .edit-ctrl {margin-bottom: .6em;} }
+@media (max-width: 540px) { .lbl {display: none;} }
+@media (max-width: 680px) { label.open-lbl {display: none;} }
+@media (min-width: 640px) { body {font-size:1rem;} } 
+@media (min-width:960px) { body {font-size:1.2rem;} } 
+@media (min-width:1100px) { body {font-size:1.5rem;} }
+
+/*
+the rem unit is not recognized by older browers, so don’t forget to implement a fallback.
+*/
+.padded-top {
+    margin-top: 1rem;
+}
+.nuevo-btn {
+
+    margin-right: .375rem;
+}
+.botones-edit {
+ margin: .625em .375em;
+}
+button {
+
+    border-radius: .5rem;
+/*    margin-right: 1em;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+*/
+    display: inline-block;
+    border: none;
+    padding: 1em 2em;
+
+    margin: 0;
+    text-decoration: none;
+    /*    background: #808000;*/
+    background: #7a8eb8;
+    color: #FFFFE0;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em; /* if font-size is variable, letter spacing should def be em */
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #BDB76B;
+}
+
+button:focus {
+    outline: .2em solid #fff;
+    outline-offset: -.3em; 
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+.float-left {
+    float: left;
+}
+.divider {
+    width:.375rem;
+    height:auto;
+    display:inline-block;
+}
+
+input[type=text] {
+    width: 80%;
+/*    background-color: #FFE169;*/
+    padding: .9em .4em;
+    margin: .625em .375em;
+    box-sizing: border-box;
+    font-size: .7rem;
+    opacity: 0.9;
+
+    max-width: 18em;
+    font-weight: 500;
+
+
+}
+.lot-botones {
+    padding-top: .4em;
+}
+.slct-section {
+    margin-left: 2.6em;
+}
+.select-css {
+    
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%; /* useful when width is set to anything other than 100% */
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    /* note: bg image below uses 2 urls.
+can also swap in a different svg icon or an external image reference
+
+*/
+background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+		  linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+background-repeat: no-repeat, repeat;
+/* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+background-position: right .7em top 50%, 0 0;
+/* icon size, then gradient */
+background-size: .65em auto, 100%;
+}
+ /* Hide arrow icon in IE browsers */
+.select-css::-ms-expand {
+     display: none;
+ }
+ /* Hover style */
+ .select-css:hover {
+     border-color: #888;
+ }
+ /* Focus style */
+ .select-css:focus {
+     border-color: #aaa;
+     /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+     box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+     box-shadow: 0 0 0 3px -moz-mac-focusring;
+     color: #222;
+     outline: none;
+ }
+
+ .edit-ctrl {
+ }
+
+ .input-bubble {
+     padding: .2em;
+     margin: .5em;
+     background-color: #4C516D;
+     overflow: auto;
+border-radius: .5rem;		
+ }
+
+ /* Set options to normal weight */
+ .select-css option {
+     font-weight:normal;
+ }
+
+ /* Support for rtl text, explicit support for Arabic and Hebrew */
+ *[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css {
+     background-position: left .7em top 50%, 0 0;
+     padding: .6em .8em .5em 1.4em;
+ }
+
+ /* Disabled styles */
+ .select-css:disabled, .select-css[aria-disabled=true] {
+     color: graytext;
+     background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+		       linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+ }
+
+ .select-css:disabled:hover, .select-css[aria-disabled=true] {
+     border-color: #aaa;
+ }
+
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 1.25em; height: 1.25em;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: .25em;
+  box-shadow: inset 0 .6em .19em rgba(0,0,0,.1);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '\2713\0020';
+  position: absolute;
+  top: .15em; left: .22em;
+  font-size: 1.3em;
+  line-height: 0.8;
+  color: #09ad7e;
+  transition: all .2s;
+  font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  border: .13rem dotted blue;
+}
+.float-right {
+    margin-top: .8em;
+    margin-right: .8em;
+    float: right;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: .13em solid #4778d9!important;
+}
+
+
+
+ 
+/* border-width is when to use px */
+/* em for border radius? why? https://medium.com/@kilgarenone/in-short-when-to-use-px-em-and-rem-b2de94e1b829 */
+
+/* child em's *can* multiply
+https://alligator.io/css/rem-vs-em-units/
+.parent {
+  font-size: 15px;
+}
+.child {
+  font-size: 2em;
+}
+<div class="parent">
+  I'm 15px
+  <div class="child">
+  I'm 30px, as expected
+    <div class="child">
+    I'm 60px, trouble starts!
+      <div class="child">
+      I'm 120px, now we're really in trouble!
+      </div>
+    </div>
+  </div>
+</div>
+
+em is only for when u want influence of the parent element
+https://j.eremy.net/confused-about-rem-and-em/
+this guy used to do em a lot but now also does rem mostly
+
+
+this guy indicates some em pitfalls
+https://zellwk.com/blog/rem-vs-em/
+"I have two simple rules:
+
+Size in em if the property scales according to its font-size
+Size everything else in rem."
+the implementation pitfall is in implementing headers/etc that inherit from multiple classes, when u may have to redeclare padding
+
+this breaks (too little padding):
+.header {
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: #7F7CFF;
+}
+
+.header--large {
+  font-size: 2rem;
+}
+
+this is fix (redeclare padding):
+.header {
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: #7F7CFF;
+}
+
+.header--large {
+  font-size: 2rem;
+  padding: 1rem 1.5rem;
+}
+
+in effect:
+Notice the pattern here? .header--large's font-size is twice as large as .header's. Consequently, padding on .header--large is twice as large as padding on .header.
+
+What would happen if we have more headers of different sizes, or if the headers have to change in size? You can already see how coding the entire site in rem can cause duplication and super complex code.
+
+We can simplify the code such that there’s no need to redeclare padding on .header--large if we don’t mind using both em and rem:
+
+.header {
+  font-size: 1rem;
+  padding: 0.5em 0.75em;
+  background: #7F7CFF;
+}
+
+.header--large {
+  font-size: 2rem;
+}
+
+so if we add classes that change the (rem) font size, the root class defined padding according to the (flexible) em size
+this could help btw w/ media queries. u may want it relative
+
+
+ok -- implemented that (rem font sizes, em's for padding/etc, local properties that derive from local font size for responsiveness -- see media queries too for how this can make for more flexible responsiveness), feeling good about what that does for responsiveness
+
+but i ain't changing the font size (or strategy -- weight/letter-spacing) enough in the app
+
+and I don't have the complete family strategy, for extra web safety (and maybe an extra font, such as for zero-case, "msg" div)
+
+btw how is that msg div kept responsive, as w/ Zendesk?
+ */
+
+
+/*
+https://stackoverflow.com/questions/1165497/can-i-prevent-text-in-a-div-block-from-overflowing
+If you want the overflowing text in the div to automatically newline instead of being hidden or making a scrollbar, use the
+
+word-wrap: break-word
+
+property.
+*/

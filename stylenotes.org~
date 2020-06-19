@@ -1,0 +1,5 @@
+* basically...
+** it's like this
+** rem is relative to px font-size of *root* ("html" element, almost "body")
+** em is relative to px font-size of containing element/tag
+** When using rem units, the pixel size they translate to depends on the font size of the root element of the page, i.e. the html element. That root font size is multiplied by whatever number you’re using with your rem unit.
